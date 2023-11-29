@@ -1,0 +1,212 @@
+CONNECT ECE2K19
+
+SET LINESIZE 200
+SET PAGESIZE 200
+
+
+CREATE TABLE Student (
+ Student_id  int NOT NULL,
+ First_name  varchar(20),
+ Last_name  varchar(20),
+ Address   varchar(20),
+ Gender   varchar(10),
+ PRIMARY KEY(Student_id)
+);
+
+INSERT INTO Student VALUES(1909001,'Nahin','Bin Shams','Kurigram','M');
+INSERT INTO Student VALUES(1909002,'Nishat','Taaha','Dhaka','F');
+INSERT INTO Student VALUES(1909003,'Sanjukta','Sarker','Satkhira','F');
+INSERT INTO Student VALUES(1909004,'Md. Marjan','Hossain','Dinajpur','M');
+INSERT INTO Student VALUES(1909007,'Nabila','Rakib','Pabna','F');
+INSERT INTO Student VALUES(1909008,'Laila Arjumand','Zannat','Jhenaidah','F');
+INSERT INTO Student VALUES(1909009,'Mehraba','Manarat','Tangail','F');
+INSERT INTO Student VALUES(1909010,'Shameema Afreen','Senjuty','Dhaka','F');
+INSERT INTO Student VALUES(1909011,'Owafa Tashmeem','Rafa','Syhlet','F');
+INSERT INTO Student VALUES(1909012,'Md. Jahedul','Islam','Madaripur','M');
+INSERT INTO Student VALUES(1909013,'Md. Saif','Alvi','Noakhali','M');
+INSERT INTO Student VALUES(1909014,'Rubaiyat Hasan','Uchhwas','Khulna','M');
+INSERT INTO Student VALUES(1909015,'Md. Ashikul','Islam','Laxmipur','M');
+INSERT INTO Student VALUES(1909016, ' ', ' ', ' ', 'M');
+INSERT INTO Student VALUES(1909017, ' ', ' ', ' ', 'M');
+INSERT INTO Student VALUES(1909018, ' ', ' ', ' ', 'F');
+INSERT INTO Student VALUES(1909019, ' ', ' ', ' ', 'M'); 
+INSERT INTO Student VALUES(1909020, ' ', ' ', ' ', 'F');
+INSERT INTO Student VALUES(1909021, ' ', ' ', ' ', 'F');
+INSERT INTO Student VALUES(1909022, ' ', ' ', ' ', 'F');
+INSERT INTO Student VALUES(1909023, ' ', ' ', ' ', 'M');
+INSERT INTO Student VALUES(1909024, ' ', ' ', ' ', 'M');
+INSERT INTO Student VALUES(1909025, ' ', ' ', ' ', 'F');
+INSERT INTO Student VALUES(1909026, ' ', ' ', ' ', 'M');
+INSERT INTO Student VALUES(1909027, ' ', ' ', ' ', 'M');
+INSERT INTO Student VALUES(1909028, ' ', ' ', ' ', 'M');
+INSERT INTO Student VALUES(1909029, ' ', ' ', ' ', 'M');
+INSERT INTO Student VALUES(1909031, ' ', ' ', ' ', 'M');
+INSERT INTO Student VALUES(1909032, ' ', ' ', ' ', 'M');
+INSERT INTO Student VALUES(1909033, ' ', ' ', ' ', 'M');
+INSERT INTO Student VALUES(1909034, ' ', ' ', ' ', 'M');
+INSERT INTO Student VALUES(1909035, ' ', ' ', ' ', 'F');
+INSERT INTO Student VALUES(1909036, ' ', ' ', ' ', 'M');
+INSERT INTO Student VALUES(1909037, ' ', ' ', ' ', 'M');
+INSERT INTO Student VALUES(1909038, ' ', ' ', ' ', 'M');
+INSERT INTO Student VALUES(1909039, ' ', ' ', ' ', 'F');
+INSERT INTO Student VALUES(1909040, ' ', ' ', ' ', 'M');
+INSERT INTO Student VALUES(1909041, ' ', ' ', ' ', 'F');
+INSERT INTO Student VALUES(1909042, ' ', ' ', ' ', 'M');
+INSERT INTO Student VALUES(1909043, ' ', ' ', ' ', 'M');
+INSERT INTO Student VALUES(1909044, ' ', ' ', ' ', 'M');
+INSERT INTO Student VALUES(1909045, ' ', ' ', ' ', 'F');
+INSERT INTO Student VALUES(1909046, ' ', ' ', ' ', 'F');
+INSERT INTO Student VALUES(1909047, ' ', ' ', ' ', 'M');
+INSERT INTO Student VALUES(1909048, ' ', ' ', ' ', 'F');
+INSERT INTO Student VALUES(1909049, ' ', ' ', ' ', 'M');
+INSERT INTO Student VALUES(1909050, ' ', ' ', ' ', 'M');
+INSERT INTO Student VALUES(1909051, ' ', ' ', ' ', 'M');
+INSERT INTO Student VALUES(1909052, ' ', ' ', ' ', 'F');
+INSERT INTO Student VALUES(1909053, ' ', ' ', ' ', 'M');
+INSERT INTO Student VALUES(1909054, ' ', ' ', ' ', 'M');
+INSERT INTO Student VALUES(1909056, ' ', ' ', ' ', 'M');
+INSERT INTO Student VALUES(1909057, ' ', ' ', ' ', 'M');
+INSERT INTO Student VALUES(1909058, ' ', ' ', ' ', 'M');
+INSERT INTO Student VALUES(1909059, ' ', ' ', ' ', 'M');
+INSERT INTO Student VALUES(1909060, ' ', ' ', ' ', 'M');
+
+
+CREATE TABLE Teacher (
+ Teacher_id  int NOT NULL,
+ Name   varchar(30),
+ Title  varchar(20),
+ PRIMARY KEY(Teacher_id)
+);
+
+INSERT INTO Teacher VALUES(01,'Dr. Md. Faruque Hossain','Professor');
+INSERT INTO Teacher VALUES(12,'Dr. Sk Shariful Alam','Professor');
+INSERT INTO Teacher VALUES(02,'Dr. Monir Hossen','Professor');
+INSERT INTO Teacher VALUES(03,'Dr. Sheikh Md. Rabiul Islam','Professor');
+INSERT INTO Teacher VALUES(04,'Mr. Md. Khorshed Alom','Assistant Professor');
+INSERT INTO Teacher VALUES(05,'Mr. Shah Muhammad Azmat Ullah','Assistant Professor');
+INSERT INTO Teacher VALUES(06,'Mr. Md. Minhajul Islam Arnab','Lecturer');
+INSERT INTO Teacher VALUES(07,'Mr. Naymur Rahman','Lecturer');
+INSERT INTO Teacher VALUES(08,'Ms. Shafrin Sultana','Lecturer');
+INSERT INTO Teacher VALUES(09,'Mr. Nawaz Talukder Sanglap','Lecturer');
+INSERT INTO Teacher VALUES(10,'Mr. Md. Badiuzzaman Shuvo','Lecturer');
+INSERT INTO Teacher VALUES(11,'Mr. Safin Ahmmed','Lecturer');
+
+
+CREATE TABLE Course (
+ Course_id   int NOT NULL,
+ Course_name  varchar(30),
+ Course_type   varchar(12),
+ Course_credit  float(5),
+ Teacher_id  int,
+ PRIMARY KEY (Course_id),
+ FOREIGN KEY(Teacher_id) REFERENCES Teacher(Teacher_id)
+);
+
+INSERT INTO Course VALUES(3200,'Electronics Project Design','Sessional',1.50, 12);
+INSERT INTO Course VALUES(3201,'Information Theory','Theory',3.00, 09);
+INSERT INTO Course VALUES(3201,'Information Theory','Theory',3.00, 04);
+INSERT INTO Course VALUES(3203,'Digital Signal Processing','Theory',3.00, 03);
+INSERT INTO Course VALUES(3203,'Digital Signal Processing','Theory',3.00, 05);
+INSERT INTO Course VALUES(3204,'Digital Signal Processing Lab','Sessional',0.75, 03);
+INSERT INTO Course VALUES(3204,'Digital Signal Processing Lab','Sessional',0.75, 08);
+INSERT INTO Course VALUES(3205,'Digital Communication','Theory',3.00, 01);
+INSERT INTO Course VALUES(3205,'Digital Communication','Theory',3.00, 02);
+INSERT INTO Course VALUES(3206,'Digital Communication Lab','Sessional',0.75, 01);
+INSERT INTO Course VALUES(3206,'Digital Communication Lab','Sessional',0.75, 06);
+INSERT INTO Course VALUES(3207,'Antenna Engineering','Theory',3.00, 06);
+INSERT INTO Course VALUES(3207,'Antenna Engineering','Theory',3.00, 07);
+INSERT INTO Course VALUES(3208,'Antenna Engineering Lab','Sessional',0.75, 06);
+INSERT INTO Course VALUES(3208,'Antenna Engineering Lab','Sessional',0.75, 07);
+INSERT INTO Course VALUES(3209,'Database System','Theory',3.00, 10);
+INSERT INTO Course VALUES(3209,'Database System','Theory',3.00, 11);
+INSERT INTO Course VALUES(3210,'Database System Lab','Sessional',0.75, 10);
+INSERT INTO Course VALUES(3210,'Database System Lab','Sessional',0.75, 09);
+
+CREATE TABLE Videos (
+ Video_id  int NOT NULL,
+ Course_id   int NOT NULL,
+ Video_file  varchar(30),
+ PRIMARY KEY(Video_id),
+ FOREIGN KEY(Course_id) REFERENCES Course(Course_id)
+);
+
+INSERT INTO Videos VALUES(101, 3201, 'IT-Lecture 01.mp4');
+INSERT INTO Videos VALUES(105, 3204, 'DSP Lab 01.mp4');
+INSERT INTO Videos VALUES(109, 3210, 'Database Lab 02.mp4');
+INSERT INTO Videos VALUES(116, 3209, 'Database-Lecture 04.mp4');
+INSERT INTO Videos VALUES(120, 3206, 'DC Lab 02.mp4');
+INSERT INTO Videos VALUES(126, 3208, 'AE Lab 01.mp4');
+INSERT INTO Videos VALUES(137, 3200, 'Project Discussion.mp4');
+
+
+CREATE TABLE PDF (
+ Pdf_id  int NOT NULL,
+ Course_id  int NOT NULL,
+ Pdf_file  varchar(35),
+ PRIMARY KEY(Pdf_id),
+ FOREIGN KEY(Course_id) REFERENCES Course(Course_id)
+);
+
+INSERT INTO PDF VALUES(1001, 3209, 'Indexing.pdf');
+INSERT INTO PDF VALUES(1003, 3201, 'Introduction.pdf');
+INSERT INTO PDF VALUES(1004, 3205, 'Digital to Analog Conversion.pdf');
+INSERT INTO PDF VALUES(1007, 3203, 'Introduction to Wavelet.pdf');
+INSERT INTO PDF VALUES(1011, 3209, 'Transactions.pdf');
+INSERT INTO PDF VALUES(1016, 3207, 'Antenna Array.pdf');
+INSERT INTO PDF VALUES(1020, 3201, 'Lecture 01.pdf');
+
+    
+CREATE TABLE Quiz (
+ Quiz_id   int NOT NULL,
+ Course_id   int NOT NULL,
+ Question   varchar(10), 
+ Option_01  varchar(06), 
+ Option_02  varchar(06),
+ Option_03  varchar(06),
+ Option_04  varchar(06),
+ Correct_answer  varchar(06),
+ PRIMARY KEY(Quiz_id),
+ FOREIGN KEY(Course_id) REFERENCES Course(Course_id)
+);
+
+INSERT INTO Quiz VALUES(501, 3201, '?', 'A', 'B', 'C', 'D', 'B');
+INSERT INTO Quiz VALUES(502, 3205, '??', 'E', 'F', 'G', 'H', 'F');
+INSERT INTO Quiz VALUES(503, 3203, '???', 'I', 'J', 'K', 'L', 'J');
+INSERT INTO Quiz VALUES(504, 3209, '????', 'M', 'N', 'O', 'P', 'P');
+INSERT INTO Quiz VALUES(505, 3201, '?????', 'Q', 'R', 'S', 'T', 'R');
+INSERT INTO Quiz VALUES(506, 3207, '??????', 'U', 'V', 'W', 'X', 'X');
+INSERT INTO Quiz VALUES(507, 3203, '???????', 'C', 'B', 'S', 'X', 'S');
+
+
+CREATE TABLE Result (
+ Result_id  int NOT NULL,
+ Student_id  int NOT NULL,
+ Course_id   int NOT NULL,
+ Total_item  int NOT NULL,
+ Score  int,
+ Result_date timestamp,
+ PRIMARY KEY(Result_id),
+ FOREIGN KEY(Student_id) REFERENCES Student(Student_id),
+ FOREIGN KEY(Course_id) REFERENCES Course(Course_id)
+);
+
+INSERT INTO Result VALUES(01, 1909002, 3201, 02, 32, TO_DATE('2023-11-10 06:54:30', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO Result VALUES(02, 1909001, 3203, 02, 38, TO_DATE('2023-11-10 06:54:30', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO Result VALUES(03, 1909009, 3207, 02, 39, TO_DATE('2023-11-10 06:54:30', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO Result VALUES(04, 1909012, 3209, 02, 38, TO_DATE('2023-11-10 06:54:30', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO Result VALUES(05, 1909015, 3205, 02, 40, TO_DATE('2023-11-10 06:54:30', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO Result VALUES(06, 1909016, 3203, 02, 30, TO_DATE('2023-11-10 06:54:30', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO Result VALUES(07, 1909018, 3201, 02, 20, TO_DATE('2023-11-10 06:54:30', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO Result VALUES(08, 1909023, 3209, 02, 34, TO_DATE('2023-11-10 06:54:30', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO Result VALUES(09, 1909034, 3207, 02, 28, TO_DATE('2023-11-10 06:54:30', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO Result VALUES(10, 1909040, 3205, 02, 18, TO_DATE('2023-11-10 06:54:30', 'YYYY-MM-DD HH24:MI:SS'));
+
+
+SELECT * FROM STUDENT;
+SELECT * FROM TEACHER;
+SELECT * FROM COURSE;
+SELECT * FROM VIDEOS;
+SELECT * FROM PDF;
+SELECT * FROM QUIZ;
+SELECT * FROM RESULT;
+
